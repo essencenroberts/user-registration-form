@@ -1,3 +1,5 @@
+
+
 // Select DOM elements & connect JavaScript to HTML 
 const form = document.getElementById('registrationForm')
 
@@ -6,6 +8,8 @@ const usernameInput = document.getElementById('username');
 const emailInput = document.getElementById('email');
 
 const passwordInput = document.getElementById('password');
+
+const confirmPasswordInput = document.getElementById('confirmPassword')
 
 const usernameError = document.getElementById('emailError');
 
@@ -110,3 +114,45 @@ confirmPasswordInput.addEventListener('input', () => {
 
 
 // form submission
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const isUsernameValid = validateField(usernameInput, usernameError);
+
+  const isEmailValid = validateField(emailInput, emailError);
+
+  const isPasswordValid = validateField(passwordInput, passwordError);
+
+  const isConfirmPasswordValid = validateConfirmPassword();
+
+  const isFormValid =
+    isUsernameValid && isEmailValid && isPasswordValid && isConfirmPasswordValid;
+
+    if (isFormValid) {
+      localStorage.setItem('username', usernameInput.value);
+
+      alert('Registration successful!');
+
+      passwordInput.value = '';
+      confirmPasswordInput.value = '';
+      passwordError.textContent = '';
+      confirmPasswordError.textContent = '';
+    } else {
+      // if something is invalid
+
+      const fields = [
+        { input: usernameInput, valid: isUsernameValid },
+
+        { input: emailInput, valid: isEmailValid },
+
+        { input: passwordInput, valid: isPasswordValid },
+
+        { input: confirmPasswordInput, valid: isConfirmPasswordValid},
+      ];
+
+      const firstInvalid = fields.find((field) => !field.valid);
+        if (firstInvalid) {
+          firstInvalid.input.focus();
+        }
+    }
+} );
