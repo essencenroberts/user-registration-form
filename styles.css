@@ -30,11 +30,12 @@ h1 {
 form {
   padding: 2rem;
   border-radius: 32px;
-  background-color: #202225;
+  background: linear-gradient(135deg, #00aaf3 0%, rgb(126, 190, 255) 45%, #0091ea 100%);
   color: aliceblue;
   flex-direction: column;
   display: flex;
   max-width: 400px;
+  box-shadow: 0 5px 8px rgba(0, 2, 0, 0.1);
 }
 
 .form-group {
@@ -96,5 +97,5 @@ button {
 }
 
 button[type="submit"]:hover {
-  background-color: #ffea00;
+  background: linear-gradient(135deg, #96fa01 0%, rgb(122, 251, 170) 45%, #ffff11 100%);
 }
