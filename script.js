@@ -21,7 +21,7 @@ const confirmPasswordError = document.getElementById('confirmPasswordError');
 
 //console.log(form, usernameInput, emailInput, passwordInput, confirmPasswordInput)
 
-// load data
+// load data username 
 window.addEventListener('DOMContentLoaded', () => {
   const savedUsername = localStorage.getItem('username');
   //console.log('Saved username from localStorage:', savedUsername)

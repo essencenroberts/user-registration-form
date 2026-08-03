@@ -31,11 +31,10 @@ form {
   padding: 2rem;
   border-radius: 32px;
   background-color: #202225;
-  width: 26rem;
-  max-width: 100%;
-  justify-items: center;
   color: aliceblue;
-  
+  flex-direction: column;
+  display: flex;
+  max-width: 400px;
 }
 
 .form-group {
@@ -45,12 +44,12 @@ form {
 
 
 input {
-  
   border: none;
+  box-sizing: border-box;
 }
 
 .form-group {
-  margin-top: 1rem;
+  margin-top: .5rem;
   display: block;
   align-content: center;
 }
@@ -58,11 +57,10 @@ input {
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group input[type="password"] {
-  width: calc(100% - 22px); /* Account for padding and border */
-  padding: 10px;
+  width: 100%; /* Account for padding and border */
+  padding: 8px;
   border: 1px solid #ddd;
   border-radius: 15px;
-  box-sizing: border-box; /* Makes width calculation easier */
 }
 
 .form-group small {
@@ -90,7 +88,7 @@ button {
   border-radius: 25px;
   background-color: #white;
   padding: 10px;
-  width: 10rem;
+  width: 400px;
   max-width: 100%;
   margin-top: 1rem;
   font-weight: 800;
