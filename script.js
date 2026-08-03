@@ -19,10 +19,12 @@ const passwordError = document.getElementById('passwordError');
 
 const confirmPasswordError = document.getElementById('confirmPasswordError');
 
+//console.log(form, usernameInput, emailInput, passwordInput, confirmPasswordInput)
 
 // load data
 window.addEventListener('DOMContentLoaded', () => {
   const savedUsername = localStorage.getItem('username');
+  //console.log('Saved username from localStorage:', savedUsername)
   if (savedUsername) {
     usernameInput.value = savedUsername
   }
@@ -124,6 +126,8 @@ form.addEventListener('submit', (event) => {
   const isPasswordValid = validateField(passwordInput, passwordError);
 
   const isConfirmPasswordValid = validateConfirmPassword();
+
+  //console.log({ isUsernameValid , isEmailValid, isPasswordValid, isConfirmPasswordValid })
 
   const isFormValid =
     isUsernameValid && isEmailValid && isPasswordValid && isConfirmPasswordValid;
